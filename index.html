@@ -139,16 +139,23 @@
             <br><br><br><br><br><br>
             <img src="./public/img/Googlelogo.png" alt="">
             <br><br><br>
-            <input id = "searchtxt" type = "text" value = "" style = "width: 75%; height: 2.5em; border-radius: 50px;">
+            <input id = "searchtxt" type = "text" value = "" style = "width: 75%; height: 2.5em; border-radius: 50px;"> 
             <br><br>
-            <div class="balloon" style = "margin-left: 27.5%">2. 이 택스트 상자에 당신이 궁굼한 것을 입력합니다.</div>
+            <div class="balloon">2. 이 택스트 상자에 당신이 궁굼한 것을 입력합니다.</div>
             <br><br><br>
             <button class = "button-next" style = "width: 50%; height: 2.25em" onclick = "window.open(`https://www.google.com/search?q=${document.getElementById('searchtxt').value}`)">Google 검색</button>
             <br><br>
-            <div class="balloon" style = "margin-left: 27.5%">3. 위 "Google 검색" 버튼을 누릅니다. 참 쉽죠? 선검색 후질문을 생활화합시다.</div>
+            <div class="balloon">3. 위 "Google 검색" 버튼을 누릅니다. 참 쉽죠? 선검색 후질문을 생활화합시다.</div>
             <br><br><br>
         </div>
     </div>
     <br><br><br>
 </body>
+<script>
+    var para = document.location.href.split("?"); 
+    console.log(para);
+    para = decodeURI(para[1]);
+    document.title = para;
+    document.getElementById("searchtxt").value = para;
+</script>
 </html>
